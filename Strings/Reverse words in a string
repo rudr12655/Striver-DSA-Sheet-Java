@@ -1,0 +1,40 @@
+# Reverse Words in a String
+
+## Problem
+
+Given a string `s`, reverse the order of words.
+
+A word is defined as a sequence of non-space characters.
+
+The returned string should:
+- Contain words in reverse order
+- Have only a single space between words
+- Not contain leading or trailing spaces
+
+## Example
+
+```text
+Input:  "the sky is blue"
+Output: "blue is sky the"
+
+Input:  "  hello   world  "
+Output: "world hello"
+
+CODE ::
+class Solution {
+    public String reverseWords(String s) {
+        String[] words = s.trim().split("\\s+");
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i = words.length - 1; i >= 0; i--) {
+            result.append(words[i]);
+
+            if (i != 0) {
+                result.append(" ");
+            }
+        }
+
+        return result.toString();
+    }
+}
